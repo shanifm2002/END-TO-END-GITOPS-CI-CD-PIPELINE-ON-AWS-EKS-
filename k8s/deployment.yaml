@@ -1,6 +1,5 @@
 apiVersion: apps/v1
 kind: Deployment
-
 metadata:
   name: gitops-demo
   namespace: gitops-demo
@@ -21,34 +20,40 @@ spec:
 
     spec:
       containers:
-      - name: gitops-demo
+        - name: gitops-demo
 
+<<<<<<< HEAD
         image: 759945100402.dkr.ecr.eu-north-1.amazonaws.com/gitops-demo:a57bda45ecc5464d4559b25e8ff6f3413c35caff
+=======
+          image: 759945100402.dkr.ecr.eu-north-1.amazonaws.com/gitops-demo:v3
+          imagePullPolicy: Always
+>>>>>>> 7924606 (update application v6)
 
-        imagePullPolicy: Always
+          ports:
+            - containerPort: 8081
 
-        ports:
-        - containerPort: 8081
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
 
-        resources:
-          requests:
-            cpu: "200m"
-            memory: "256Mi"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8081
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
 
-          limits:
-            cpu: "500m"
-            memory: "512Mi"
-
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 8081
-          initialDelaySeconds: 15
-          periodSeconds: 10
-
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8081
-          initialDelaySeconds: 30
-          periodSeconds: 20
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8081
+            initialDelaySeconds: 30
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
