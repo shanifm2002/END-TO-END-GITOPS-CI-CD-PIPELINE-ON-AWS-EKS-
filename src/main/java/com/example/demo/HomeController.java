@@ -8,7 +8,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "Welcome to GitOps CI/CD Pipeline on AWS EKS";
+        return "Welcome to GitOps CI/CD Pipeline on AWS EKS !!!!!!";
     }
 
     @GetMapping("/health")
