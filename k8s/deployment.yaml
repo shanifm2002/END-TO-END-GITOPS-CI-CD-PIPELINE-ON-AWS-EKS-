@@ -23,7 +23,7 @@ spec:
       containers:
       - name: gitops-demo
 
-        image: 759945100402.dkr.ecr.eu-north-1.amazonaws.com/gitops-demo:96461af7d433d71f5bcbceb9c94f0ed3dc952c20
+        image: 759945100402.dkr.ecr.eu-north-1.amazonaws.com/gitops-demo:17adb9394fe4add905f58796e25ebb572d23e38b
 
         imagePullPolicy: Always
 
