@@ -18,6 +18,6 @@ public class HomeController {
 
     @GetMapping("/version")
     public String version() {
-        return "Application Version : v1.0";
+        return "GitOps Demo Version 4";
     }
 }
