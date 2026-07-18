@@ -8,30 +8,20 @@ metadata:
 
 spec:
   replicas: 2
-
   selector:
     matchLabels:
       app: gitops-demo
-
   template:
     metadata:
       labels:
         app: gitops-demo
-
     spec:
       containers:
         - name: gitops-demo
-
-<<<<<<< HEAD
-        image: 759945100402.dkr.ecr.eu-north-1.amazonaws.com/gitops-demo:a57bda45ecc5464d4559b25e8ff6f3413c35caff
-=======
-          image: 759945100402.dkr.ecr.eu-north-1.amazonaws.com/gitops-demo:v3
+          image: 759945100402.dkr.ecr.eu-north-1.amazonaws.com/gitops-demo:a57bda45ecc5464d4559b25e8ff6f3413c35caff
           imagePullPolicy: Always
->>>>>>> 7924606 (update application v6)
-
           ports:
             - containerPort: 8081
-
           resources:
             requests:
               cpu: "200m"
@@ -39,7 +29,6 @@ spec:
             limits:
               cpu: "500m"
               memory: "512Mi"
-
           readinessProbe:
             httpGet:
               path: /health
@@ -48,7 +37,6 @@ spec:
             periodSeconds: 10
             timeoutSeconds: 5
             failureThreshold: 3
-
           livenessProbe:
             httpGet:
               path: /health
