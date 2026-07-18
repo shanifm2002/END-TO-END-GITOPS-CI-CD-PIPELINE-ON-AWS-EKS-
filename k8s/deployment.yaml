@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: gitops-demo
-          image: 759945100402.dkr.ecr.eu-north-1.amazonaws.com/gitops-demo:6b5f6464044358fbfbcbae8ed6c6019b66101a32
+          image: 759945100402.dkr.ecr.eu-north-1.amazonaws.com/gitops-demo:7db27849e910600dd63c0b87b0cc964abe62cd98
           imagePullPolicy: Always
           ports:
             - containerPort: 8081
