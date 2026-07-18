@@ -8,7 +8,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home() {
-        return "Welcome to GitOps CI/CD Pipeline on AWS EKS !!!!!!";
+        return "GitOps Pipeline Test";
     }
 
     @GetMapping("/health")
@@ -18,6 +18,6 @@ public class HomeController {
 
     @GetMapping("/version")
     public String version() {
-        return "GitOps Demo Version 4";
+        return "GitOps Demo Version 5";
     }
 }
